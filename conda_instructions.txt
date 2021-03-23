@@ -1,0 +1,19 @@
+#load conda module and initialize
+module load anaconda3/2020.11
+conda init
+source ~/.bashrc
+#add conda channels
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+
+
+#install mamba for faster installation
+conda install -c conda-forge mamba
+#create pyrpipe environment
+mamba create -n pyrpipe -c bioconda pyrpipe star=2.7.7a sra-tools=2.10.9 stringtie=2.1.4 trim-galore=0.6.6 orfipy=0.0.3 salmon=1.4.0 git
+
+#activate the environment
+conda activate pyrpipe
+#test pyrpipe installation
+pyrpipe -h
