@@ -1,0 +1,139 @@
+STAR version=2.7.7a
+STAR compilation time,server,dir=Mon Dec 28 13:38:40 EST 2020 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+##### Command Line:
+STAR --runThreadN 6 --genomeDir star_index --outSAMtype BAM SortedByCoordinate --readFilesIn ../data/reads_1.fastq ../data/reads_2.fastq --outFileNamePrefix ../data/
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 ../data/
+###### All USER parameters from Command Line:
+runThreadN                    6     ~RE-DEFINED
+genomeDir                     star_index     ~RE-DEFINED
+outSAMtype                    BAM   SortedByCoordinate        ~RE-DEFINED
+readFilesIn                   ../data/reads_1.fastq   ../data/reads_2.fastq        ~RE-DEFINED
+outFileNamePrefix             ../data/     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runThreadN                        6
+genomeDir                         star_index
+readFilesIn                       ../data/reads_1.fastq   ../data/reads_2.fastq   
+outFileNamePrefix                 ../data/
+outSAMtype                        BAM   SortedByCoordinate   
+
+-------------------------------
+##### Final effective command line:
+STAR   --runThreadN 6   --genomeDir star_index   --readFilesIn ../data/reads_1.fastq   ../data/reads_2.fastq      --outFileNamePrefix ../data/   --outSAMtype BAM   SortedByCoordinate   
+----------------------------------------
+
+Number of fastq files for each mate = 1
+WARNING: --limitBAMsortRAM=0, will use genome size as RAM limit for BAM sorting
+Finished loading and checking parameters
+Reading genome generation parameters:
+### STAR   --runMode genomeGenerate   --runThreadN 6   --genomeDir star_index   --genomeFastaFiles ../data/refdata/Homo_sapiens.GRCh38.dna_rm.chromosome.21.fa   
+### GstrandBit=32
+versionGenome                 2.7.4a     ~RE-DEFINED
+genomeType                    Full     ~RE-DEFINED
+genomeFastaFiles              ../data/refdata/Homo_sapiens.GRCh38.dna_rm.chromosome.21.fa        ~RE-DEFINED
+genomeSAindexNbases           14     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+genomeTransformType           None     ~RE-DEFINED
+genomeTransformVCF            -     ~RE-DEFINED
+sjdbOverhang                  0     ~RE-DEFINED
+sjdbFileChrStartEnd           -        ~RE-DEFINED
+sjdbGTFfile                   -     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+genomeFileSizes               46923776   153429816        ~RE-DEFINED
+Genome version is compatible with current STAR
+Number of real (reference) chromosomes= 1
+1	21	46709983	0
+Started loading the genome: Thu Mar 25 15:53:36 2021
+
+Genome: size given as a parameter = 46923776
+SA: size given as a parameter = 153429816
+SAindex: size given as a parameter = 1
+Read from SAindex: pGe.gSAindexNbases=14  nSAi=357913940
+nGenome=46923776;  nSAbyte=153429816
+GstrandBit=32   SA number of indices=37195106
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 46923776 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 46923776 bytes
+SA file size: 153429816 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=1 eof=0 fail=0 bad=0; loaded 153429816 bytes
+Loading SAindex ... done: 1565873619 bytes
+Finished loading the genome: Thu Mar 25 15:53:40 2021
+
+alignIntronMax=alignMatesGapMax=0, the max intron size will be approximately determined by (2^winBinNbits)*winAnchorDistNbins=589824
+Created thread # 1
+Created thread # 2
+Created thread # 3
+Created thread # 4
+Created thread # 5
+Thread #1 end of input stream, nextChar=-1
+Completed: thread #2
+Completed: thread #3
+Completed: thread #4
+Completed: thread #0
+Completed: thread #5
+BAM sorting: 121185 mapped reads
+BAM sorting bins genomic start loci:
+1	0	6484706
+2	0	14962915
+3	0	17569528
+4	0	17791467
+5	0	18857821
+6	0	18857933
+7	0	18858165
+8	0	25362246
+9	0	25729682
+10	0	25881503
+11	0	28928457
+12	0	29061365
+13	0	31119261
+14	0	31668502
+15	0	32268458
+16	0	32514970
+17	0	32734964
+18	0	33265346
+19	0	33436916
+20	0	33539251
+21	0	33557281
+22	0	33577093
+23	0	33903494
+24	0	33909081
+25	0	34100957
+26	0	34105817
+27	0	34402155
+28	0	34831028
+29	0	36138539
+30	0	36752563
+31	0	37165785
+32	0	37201816
+33	0	37228231
+34	0	37514917
+35	0	39180308
+36	0	39342503
+37	0	39346091
+38	0	39435102
+39	0	41886323
+40	0	43053581
+41	0	43761141
+42	0	44128031
+43	0	44771126
+44	0	44856220
+45	0	45476380
+46	0	45986968
+47	0	46004770
+48	0	46241016
+Completed: thread #1
+Joined thread # 1
+Joined thread # 2
+Joined thread # 3
+Joined thread # 4
+Joined thread # 5
+Mar 25 15:54:42 ..... started sorting BAM
+Max memory needed for sorting = 638291
+ALL DONE!
