@@ -1,3 +1,6 @@
+*.sam
+*.bam
+*.fastq
 *.swp
 testout/
 # Byte-compiled / optimized / DLL files
