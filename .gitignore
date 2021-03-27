@@ -1,3 +1,4 @@
+.snakemake/
 sra_test/
 star_index/
 testindex/
