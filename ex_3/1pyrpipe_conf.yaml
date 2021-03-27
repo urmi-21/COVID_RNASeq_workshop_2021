@@ -1,0 +1,10 @@
+dry: False
+threads: 5
+force: False
+params_dir: ./params
+logs: True
+logs_dir: ./pyrpipe_logs
+verbose: False
+memory: None
+safe: False
+multiqc: False

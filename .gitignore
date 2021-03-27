@@ -1,3 +1,9 @@
+sra_test/
+star_index/
+testindex/
+.pyrpipe/
+pyrpipe_logs/
+data/fastq_data/
 *.sam
 *.bam
 *.fastq
@@ -132,3 +138,19 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+./ex_1/testindex/SA
+./ex_1/testindex/SAindex
+./data/fastq_data/SRR2/SRR2_2.fastq
+./data/fastq_data/SRR2/SRR2_1.fastq
+./data/fastq_data/SRR1/SRR1_2.fastq
+./data/fastq_data/SRR1/SRR1_2_trimgalore.fastq
+./data/fastq_data/SRR1/SRR1_1_trimgalore.fastq
+./data/fastq_data/SRR1/SRR1_1.fastq
+./data/fastq_data/star_index/SA
+./data/fastq_data/star_index/SAindex
+./data/star_index/SA
+./data/star_index/SAindex
+./ex_2/star_index/SA
+./ex_2/star_index/SAindex
+./ex_3/star_index/SA
+./ex_3/star_index/SAindex

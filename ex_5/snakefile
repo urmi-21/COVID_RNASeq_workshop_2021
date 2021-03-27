@@ -1,0 +1,30 @@
+"""
+This is a basic snakefile
+"""
+
+# this is a python list
+mylist=['a','b','c']
+
+rule all:
+    input:
+        expand("{object}.txt",object=mylist)
+
+
+rule create_header:
+    output: "header.txt"
+    shell:
+        """
+            echo "# This is Header" > header.txt
+        """
+
+rule create_file:
+    output: "{object}.txt"
+    input: "header.txt"
+
+    shell:
+        """
+            touch {wildcards.object}.txt
+            sleep 3
+            cat {input} > {wildcards.object}.txt
+        """
+

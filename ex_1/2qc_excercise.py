@@ -10,5 +10,9 @@ trimgalore._category
 trimgalore._command
 #'trim_galore'
 
+
+trimmed_fastq=trimgalore.perform_qc(sra_object) # run trimgalore and return trimmed
+
+# Run trimgalore passing all the parameters
 trimgalore.run('--paired','sra_test/SRR1583780/SRR1583780_1.fastq','sra_test/SRR1583780/SRR1583780_2.fastq')
 

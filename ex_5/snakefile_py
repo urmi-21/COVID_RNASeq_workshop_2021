@@ -1,0 +1,42 @@
+"""
+This is a basic snakefile with python commands
+
+run this file as:
+snakemake -s snakemake_py -j 2
+"""
+#import python libraries
+import sys
+
+# this is a python list
+mylist=['a','b','c']
+
+rule all:
+    input:
+        expand("{object}.py",object=mylist)
+
+
+rule create_header:
+    output: "header.py"
+    run:
+        
+            print('help')
+            fo=open('header.py','w')
+            fo.write("# This is Header")
+            fo.close()
+       
+
+rule create_file:
+    output: out="{object}.py"
+    input: h="header.py"
+
+    run:
+            header_file=str(input.h)
+            with open(header_file,'r') as fi:
+                header=" ".join([l.rstrip() for l in fi])
+            # write file 
+            #outfile=str()
+            fo=open(str(wildcards.object)+'.py','w')
+            fo.write(header)
+            fo.close()
+        
+
