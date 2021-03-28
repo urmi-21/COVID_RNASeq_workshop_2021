@@ -1,5 +1,8 @@
 """
+This example shows integration of pyrpipe into snakemake.
+pyrpipe modules can be directly imported into snakemake.
 This snakefile quantifies multiple RNA-Seq runs in parallel
+
 Full version of this pipeline is available at https://github.com/urmi-21/covid-quantification
 
 """
@@ -29,7 +32,6 @@ rule quant:
 		outfile=str(output.quant_file)
 		#srrid=str()outfile.split("/")[1]
                 srrid=str(wildcards.sample)
-                print('SRRRR',srrid)
 		SRA(srrid,directory=work_directory).quant(salmon)
 
 # rule merge uses pandas to merge the quant.sf files

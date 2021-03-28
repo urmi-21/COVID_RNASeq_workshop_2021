@@ -1,6 +1,5 @@
 """
-A simple first RNA-Seq processing pipeline
-
+This example shows flexible parameter management using pyrpipe 
 This pipeline will take raw reads and align them to genome
 """
 
@@ -21,7 +20,7 @@ srr_object=SRA(fastq=fq1,fastq2=fq2) # create sra object to store fastq data
 
 # first trim the reads using trimgalore
 
-trimgalore=Trimgalore()
+trimgalore=Trimgalore() #can override threads here
 
 trimmed_fq=trimgalore.perform_qc(srr_object)
 

@@ -1,3 +1,8 @@
+"""
+This example demonstrats pyrpipe SRA class' chaining methods for easy rna-seq pipelines
+
+"""
+
 from pyrpipe.sra import *
 from pyrpipe.mapping import *
 from pyrpipe.qc import *

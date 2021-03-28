@@ -1,9 +1,14 @@
 """
 This is a basic snakefile with python commands
+The run block specifies python code.
 
 run this file as:
+# -s specifies the snakefile; by default 'snakefile' or 'Snakefile' is used
 snakemake -s snakemake_py -j 2
+
 """
+
+
 #import python libraries
 import sys
 

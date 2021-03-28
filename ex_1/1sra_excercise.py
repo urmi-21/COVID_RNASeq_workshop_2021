@@ -1,3 +1,13 @@
+"""
+Simple example to understand the SRA class
+
+Run the following commands in python CLI
+Example:
+>>> from pyrpipe.sra import *
+>>> sra_object=SRA('SRR1583780',directory='sra_test')
+
+"""
+
 from pyrpipe.sra import *
 
 # Download fastq from NCBI-SRA 

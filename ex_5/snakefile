@@ -1,5 +1,12 @@
 """
-This is a basic snakefile
+This is a basic example of snakefile
+The shell block in the rules specify command to run
+Execute this file as
+# use dry run; n is for dry run, j for number of parallel processes
+snakemake -nj 2
+
+# execute without dry-run
+snakemake -j 2
 """
 
 # this is a python list

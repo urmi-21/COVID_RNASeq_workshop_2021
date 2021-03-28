@@ -1,3 +1,11 @@
+"""
+Simple example to understand the qc module and its classes
+
+Run the following commands in python CLI
+Example:
+>>> from pyrpipe.qc import *
+"""
+
 #Run these commands in python CLI
 
 from pyrpipe.qc import *

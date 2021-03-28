@@ -1,3 +1,7 @@
+"""
+This pipeline takes reads and performs quantification
+
+"""
 from pyrpipe.sra import *
 from pyrpipe.quant import *
 from pyrpipe.qc import *
@@ -11,4 +15,6 @@ srr_object=SRA(srr_accession='SRR1',directory='../data/fastq_data')
 
 # processing pipeline
 srr_object.trim(trimgalore).quant(salmon)
+
+# to-do: write a pipeline for SRR1 till SRR5
 

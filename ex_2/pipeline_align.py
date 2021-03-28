@@ -2,6 +2,14 @@
 A simple first RNA-Seq processing pipeline
 
 This pipeline will take raw reads and align them to genome
+
+Execute this pipeline as:
+
+python pipeline_align.py --threads 10 --dry-run #execute in dry run mode
+
+python pipeline_align.py --threads 10
+or
+pyrpipe --in pipeline_align.py --threads 10 
 """
 
 from pyrpipe.sra import *

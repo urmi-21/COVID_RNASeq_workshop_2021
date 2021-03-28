@@ -35,8 +35,11 @@ pyrpipe -h
 
 ### Co-facilitators
 Jeff Haltom
+
 Harsha Vajjala
+
 Sumanth Kalki 
+
 Priyanka Bhandary
 
 
