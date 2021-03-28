@@ -8,20 +8,20 @@ from pyrpipe.sra import SRA
 from pyrpipe.quant import Salmon
 import pandas as pd
 
-
+# define list to contain accessions
 accessions=['SRR1','SRR2','SRR3','SRR4','SRR5']
 work_directory='../data/fastq_data'
 
-#create salmon object. If index is not present it will be created
+# create salmon object. If index is not present it will be created
 salmon=Salmon(index='../data/fastq_data/salmon_index',transcriptome='../data/fastq_data/tr.fa',threads=10)
 
+# rule all depends on final output
 rule all:
 	input:
-		#expand("{wd}/{sample}/salmon_out/quant.sf",wd=work_directory,sample=accessions)
 		expand("results_TPM_tx.tsv")
 
                 
-
+# rule quant runs salmon to quantify
 rule quant:
 	output:
 		quant_file="{wd}/{sample}/salmon_out/quant.sf"
@@ -32,6 +32,7 @@ rule quant:
                 print('SRRRR',srrid)
 		SRA(srrid,directory=work_directory).quant(salmon)
 
+# rule merge uses pandas to merge the quant.sf files
 rule merge:
 	input:
 		["{wd}/{sample}/salmon_out/quant.sf".format(wd=work_directory,sample=s) for s in accessions]
