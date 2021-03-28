@@ -1,3 +1,4 @@
+data/
 .snakemake/
 sra_test/
 star_index/
