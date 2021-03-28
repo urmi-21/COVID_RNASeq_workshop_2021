@@ -1,0 +1,68 @@
+"""
+This snakefile quantifies multiple RNA-Seq runs in parallel
+Full version of this pipeline is available at https://github.com/urmi-21/covid-quantification
+
+"""
+
+from pyrpipe.sra import SRA
+from pyrpipe.quant import Salmon
+import pandas as pd
+
+
+accessions=['SRR1','SRR2','SRR3','SRR4','SRR5']
+work_directory='../data/fastq_data'
+
+#create salmon object. If index is not present it will be created
+salmon=Salmon(index='../data/fastq_data/salmon_index',transcriptome='../data/fastq_data/tr.fa',threads=10)
+
+rule all:
+	input:
+		#expand("{wd}/{sample}/salmon_out/quant.sf",wd=work_directory,sample=accessions)
+		expand("results_TPM_tx.tsv")
+
+                
+
+rule quant:
+	output:
+		quant_file="{wd}/{sample}/salmon_out/quant.sf"
+	run:
+		outfile=str(output.quant_file)
+		#srrid=str()outfile.split("/")[1]
+                srrid=str(wildcards.sample)
+                print('SRRRR',srrid)
+		SRA(srrid,directory=work_directory).quant(salmon)
+
+rule merge:
+	input:
+		["{wd}/{sample}/salmon_out/quant.sf".format(wd=work_directory,sample=s) for s in accessions]
+	output:
+		outfile="results_TPM_tx.tsv"
+	run:
+		#read tx names
+		with open(input[0]) as f:
+			thisdata=f.read().splitlines()
+		thisdata.pop(0)
+		
+		names=[]
+		txids=[]
+		geneids=[]
+		for l in thisdata:
+			thistx=l.split('\t')[0]
+			if '|' in thistx: thistx=thistx.split('|')[0]
+			thisgene=l.split('\t')[0]
+			if '|' in thisgene: thisgene=thisgene.split('|')[1]
+			txids.append(thistx)
+			geneids.append(thisgene)
+		df=pd.DataFrame({'TranscriptID':txids,'GeneID':geneids})
+
+		#read files in memory
+		for qf in input:
+			name=qf.split('/')[3]
+			names.append(name)
+			thisdata=pd.read_csv(qf,sep='\t',usecols=[3],skiprows=0)
+			df[name]=thisdata['TPM']
+
+                #transcript counts
+		df_tx=df[['TranscriptID']+names].copy()
+		#write to file
+		df_tx.to_csv(output.outfile,sep='\t',index=False)
