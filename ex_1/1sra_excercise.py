@@ -29,7 +29,7 @@ sra_object2=SRA(fastq='sra_test/SRR1583780/SRR1583780_1.fastq',fastq2='sra_test/
 sra_object2.fastq_exists()
 
 #using single-end
-sra_object_single=sra.SRA(fastq='sra_test/SRR1583780/SRR1583780_1.fastq')
+sra_object_single=SRA(fastq='sra_test/SRR1583780/SRR1583780_1.fastq')
 sra_object_single.layout
 
 #delete files
