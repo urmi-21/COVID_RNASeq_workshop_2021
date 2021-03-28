@@ -8,7 +8,7 @@ pyrpipe_diagnostic report -e pdf -o myreport pyrpipe_logs/2021-03-27-14_50_34.98
 pyrpipe_diagnostic shell -o shellcommands pyrpipe_logs/2021-03-27-14_50_34.985101_53661_pyrpipe.log
 
 # perform basic benchmarks
-pyrpipe_diagnostic benchmark -o benchmark_report pyrpipe_logs/2021-03-27-14_50_34.985101_53661_pyrpipe.log
+pyrpipe_diagnostic benchmark -o benchmark_report -t benchmark_out pyrpipe_logs/2021-03-27-14_50_34.985101_53661_pyrpipe.log
 
 # see examples of multi qc and benchmark reports
-pyrpipe_diagnostic benchmark -o benchmark_report -t benchmark_out pyrpipe_logs/2021-03-27-14_50_34.985101_53661_pyrpipe.log
+# https://github.com/urmi-21/pyrpipe/tree/master/case_studies/Athaliana_transcript_assembly
