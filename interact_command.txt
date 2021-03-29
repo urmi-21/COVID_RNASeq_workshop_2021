@@ -1,1 +1,1 @@
-interact -t 6:00:00 -N 1 --ntasks-per-node=12 --reservation=covid
+interact -t 5:00:00 -N 1 --ntasks-per-node=12 -R covid -p RM-shared
