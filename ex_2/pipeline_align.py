@@ -24,7 +24,7 @@ starindex='star_index'
 
 srr_object=SRA(fastq=fq1,fastq2=fq2) # create sra object to store fastq data
 
-star=Star(genome=gen,index=starindex) # create a star object
+star=Star(genome=gen,index=starindex,threads=10) # create a star object
 star.perform_alignment(srr_object) # perform alignment of reads using the star index
 
 

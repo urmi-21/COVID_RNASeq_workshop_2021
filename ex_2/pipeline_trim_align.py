@@ -32,6 +32,6 @@ trimmed_fq=trimgalore.perform_qc(srr_object)
 # create new SRA object with trimmed fq
 trimmed_srr_object=SRA(fastq=trimmed_fq[0], fastq2=trimmed_fq[1])
 
-star=Star(genome=gen,index=starindex) # create a star object
+star=Star(genome=gen,index=starindex, threads=10) # create a star object
 star.perform_alignment(trimmed_srr_object) # perform alignment of reads using the star index
 

@@ -10,7 +10,7 @@ Example:
 
 from pyrpipe.qc import *
 
-trimgalore=Trimgalore()
+trimgalore=Trimgalore(threads=6)
 
 #some atributes
 trimgalore._category

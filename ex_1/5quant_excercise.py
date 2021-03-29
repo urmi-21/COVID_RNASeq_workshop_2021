@@ -8,4 +8,4 @@ Example:
 
 from pyrpipe.quant import *
 
-salmon=Salmon()
+salmon=Salmon(transcriptome='../data/fastq_data/tr.fa',index='./salmonindex')

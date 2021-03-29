@@ -9,7 +9,7 @@ Example:
 from pyrpipe.mapping import *
 
 
-star=Star(genome='../data/refdata/Homo_sapiens.GRCh38.dna_rm.chromosome.21.fa',index='testindex') # create a Star object to run STAR aligner
+star=Star(genome='../data/refdata/Homo_sapiens.GRCh38.dna_rm.chromosome.21.fa',index='testindex', threads=10) # create a Star object to run STAR aligner
 
 star.perform_alignment(sra_object)
 

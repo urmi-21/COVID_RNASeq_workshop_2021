@@ -34,6 +34,11 @@ sra_object_single.layout
 
 #delete files
 sra_object_single.delete_fastq()
+sra_object_single.fastq_exists()
+
+# download again
+sra_object.delete_fastq()
+sra_object=SRA('SRR1583780',directory='sra_test')
 
 
 # using accession and directory
