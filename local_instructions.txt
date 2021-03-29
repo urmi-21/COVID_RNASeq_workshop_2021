@@ -1,0 +1,31 @@
+If you don't have PSC account please follow these instructions.
+
+### clone the repo
+
+git clone https://github.com/urmi-21/COVID_RNASeq_workshop_2021.git
+
+### download the data
+
+Download the data from https://drive.google.com/file/d/190pt5jWAqrRZ4UzKav_3CWCKD7imV3M5/view?usp=sharing and unzip it and move the data folder under COVID_RNASeq_workshop_2021
+
+### install conda if not already installed
+instructions to install conda here: https://docs.anaconda.com/anaconda/install/
+
+### Create conda environment
+#add conda channels
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+
+
+#install mamba for faster installation (optional)
+conda create  -n pyrpipe python=3.8.5 mamba
+#activate the environment
+conda activate pyrpipe
+
+mamba install -c bioconda pyrpipe star=2.7.7a sra-tools=2.10.9 stringtie=2.1.4 trim-galore=0.6.6 orfipy=0.0.3 salmon=1.4.0 git snakemake
+
+#test pyrpipe installation
+pyrpipe -h
+
+
